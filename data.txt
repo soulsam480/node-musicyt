@@ -1,0 +1,12 @@
+https://www.youtube.com/watch?v=SD4Z8dlZPd8
+
+ytdl https://www.youtube.com/watch?v=SD4Z8dlZPd8 | ffmpeg -i pipe:0 -b:a 192K -vn myfile.mp3
+
+
+slow grenade
+https://www.youtube.com/watch?v=Lt7EtplY2Zs
+
+
+sixteen
+https://www.youtube.com/watch?v=oXwiVsWJqRs
+
