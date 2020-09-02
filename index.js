@@ -1,10 +1,12 @@
 var ytdl = require("ytdl-core");
 var ffmpeg = require("fluent-ffmpeg");
 var express = require("express");
+var cors = require("cors");
 const app = express();
+app.use(cors());
 const trackRoute = express.Router();
 app.use("/tracks", trackRoute);
-const port = 3000;
+const port = process.env.PORT || 8081;
 
 trackRoute.get("/:id", (req, res) => {
   var url = `https://www.youtube.com/watch?v=${req.params.id}`;
@@ -21,7 +23,7 @@ trackRoute.get("/:id", (req, res) => {
     .audioBitrate("128k")
     .toFormat("mp3")
     .on("progress", () => {
-      console.log("sending data" + i++);
+      console.log("sending data " + i++);
     });
 
   var outstream = mpstream.pipe();
