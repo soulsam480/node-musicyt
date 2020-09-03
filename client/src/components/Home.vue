@@ -18,7 +18,7 @@
     <button class="btn btn-primary" @click="playAudio">Play</button>
     <br />
     <br />
-    <audio id="audbar" autoplay controls style="width:100%">
+    <audio id="audbar" autoplay controls style="width:100%" @ended="newSong">
       <source :src="aud" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
@@ -51,10 +51,14 @@ export default {
       let audiobar = document.getElementById("audbar");
       audiobar.load();
       audiobar.play();
+    },
+    newSong() {
+      this.$router.replace({ path: "/search" });
     }
   },
   mounted() {
     if (this.$route.query.id) {
+      document.title = `Playing ${this.$route.params.title}`;
       this.aud = `http://localhost:8081/tracks/${this.$route.query.id}`;
       let audiobar = document.getElementById("audbar");
       audiobar.load();

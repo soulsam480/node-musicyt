@@ -38,6 +38,7 @@
 
 <script>
 const axios = require("axios").default;
+import keys from "../miscred/keys";
 export default {
   name: "Search",
   data() {
@@ -54,17 +55,17 @@ export default {
         headers: {
           "content-type": "application/octet-stream",
           "x-rapidapi-host": "youtube-search.p.rapidapi.com",
-          "x-rapidapi-key":
-            "364cf8f067msh3e210033b223795p17e80fjsn29e077c7f9a1",
+          "x-rapidapi-key": keys.rapidkey,
           useQueryString: true
         },
         params: {
           q: this.vid,
           part: "snippet",
-          key: "AIzaSyAJLI1HpyJlnyZojyFyqs5D_W9ffpi-mqw"
+          key: keys.gkey
         }
       })
         .then(res => {
+          document.title = `Search Results for ${this.vid}`;
           const dat = res.data.items;
           this.searchRes = [];
           dat.forEach(el => {
