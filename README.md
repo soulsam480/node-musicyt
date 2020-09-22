@@ -20,6 +20,21 @@ nodemon index.js
 ```
 Open  `http://localhost:8081` on browser!
 
+For the youtube search functionality
+
+- Create folder `miscred` inside `client/src`.
+- create a file `keys.js` and add 
+
+```javascript
+const keys = {
+  gkey: "GOOGLE_API_KEY",
+  rapidkey: "RAPID_API_KEY"
+};
+
+export default keys;
+```
+To get a Rapid API Youtube Search key and Docs go [here](https://rapidapi.com/tarfah/api/youtube-search)
+
 ### File Structure
 
 - `Client` > Vue frontend for the app.
