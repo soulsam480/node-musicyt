@@ -4,6 +4,7 @@ var express = require("express");
 var cors = require("cors");
 const app = express();
 app.use(cors());
+app.use(express.static("client/dist"));
 const trackRoute = express.Router();
 app.use("/tracks", trackRoute);
 const port = process.env.PORT || 8081;

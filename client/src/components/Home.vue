@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     playAudio() {
-      this.aud = `http://localhost:8081/tracks/${this.vid}`;
+      this.aud = `http://192.168.43.188:8081/tracks/${this.vid}`;
       let audiobar = document.getElementById("audbar");
       audiobar.load();
       audiobar.play();
@@ -59,7 +59,7 @@ export default {
   mounted() {
     if (this.$route.query.id) {
       document.title = `Playing ${this.$route.params.title}`;
-      this.aud = `http://localhost:8081/tracks/${this.$route.query.id}`;
+      this.aud = `http://192.168.43.188:8081/tracks/${this.$route.query.id}`;
       let audiobar = document.getElementById("audbar");
       audiobar.load();
       audiobar.play();
