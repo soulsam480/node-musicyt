@@ -11,29 +11,44 @@ There are a couple of prerequisites before getting started with node-music.
 - FFmpeg 
   Can be installed from [FFmpeg.org](https://ffmpeg.org/download.html)
 
-Then clone the repo and inside the project directory
+Then clone the repo and inside the project directory terminal
 
 ```bash
 npm install 
 
 nodemon index.js
 ```
-Open  `http://localhost:8081` on browser!
+
+- The API endpoint is `http://localhost:8081/tracks`
+- API takes a single parameter `id` which is the video ID.
+- For the frontend to work open `client` and inside terminal
+```bash
+npm install
+
+npm run build
+```
+- After this the frontend will be showing on `http://localhost:8081` on browser.
+
 
 For the youtube search functionality
 
-- Create folder `miscred` inside `client/src`.
-- create a file `keys.js` and add 
+- create a file `keys.js` inside `client/src/miscred` and add 
 
 ```javascript
 const keys = {
-  gkey: "GOOGLE_API_KEY",
-  rapidkey: "RAPID_API_KEY"
+  gkey: "GOOGLE_API_KEY", // google api key with youtube API enabled
+  rapidkey: "RAPID_API_KEY" //RapidAPI key for youtube search
+  // To get a Rapid API Youtube Search key and Docs go to
+  // https://rapidapi.com/tarfah/api/youtube-search
+  //Then follow the instructions for getting the key!!
 };
 
 export default keys;
 ```
-To get a Rapid API Youtube Search key and Docs go [here](https://rapidapi.com/tarfah/api/youtube-search)
+- Then build  the client again 
+```bash
+npm run build
+```
 
 ### File Structure
 
@@ -42,7 +57,7 @@ To get a Rapid API Youtube Search key and Docs go [here](https://rapidapi.com/ta
 
 ### How it Works ?
 
-FFmpeg is a community driven framework for to record, convert and stream audio and video. This project makes use of the `libmp3lame` audio codec library of FFmpeg to convert and stream videos to mp3 audio. 
+FFmpeg is a community driven framework for to record, convert and stream audio and video. This project makes use of the `libmp3lame` audio codec library of FFmpeg to convert and stream videos to mp3 audio. Learn more about FFmpeg [here](https://ffmpeg.org)
 
 #### Process
 
